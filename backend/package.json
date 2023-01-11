@@ -4,6 +4,7 @@
   "description": "blog api",
   "main": "main.js",
   "scripts": {
+    "dev": "nodemon main.js",
     "test": "jest --coverage --verbose --detectOpenHandles --forceExit"
   },
   "author": "Mehmet Arif CELIK",
