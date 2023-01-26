@@ -1,5 +1,5 @@
 const postgres = require('postgres');
-const { DB_HOST, DB_PORT, DB_NAME, DB_USERNAME, DB_PASSWORD } = require('../config');
+const { DB_HOST, DB_PORT, DB_NAME, DB_USERNAME, DB_PASSWORD } = require('./config');
 
 const sql = postgres({
     host: DB_HOST,

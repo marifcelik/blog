@@ -1,6 +1,6 @@
 const path = require('path');
 
-require('dotenv').config({ path: path.resolve(__dirname, `${process.env.NODE_ENV}.env`), debug: true });
+require('dotenv').config({ path: path.resolve(`${__dirname}/../../`, `${process.env.NODE_ENV}.env`), debug: true });
 
 module.exports = {
     HOST: process.env.HOST || 'localhost',
