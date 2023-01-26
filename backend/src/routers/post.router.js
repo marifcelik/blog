@@ -4,6 +4,8 @@ const queryHandler = require('./queryHandler');
 
 const router = express.Router();
 
+// TODO: add new endpoint which returns specific range of posts for pagination
+
 router.get('/', async (req, res) => {
     const [result, error] = await queryHandler(sql` SELECT * FROM posts`)
     if (error)
@@ -15,8 +17,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     if (!id)
-    return res.status(400).json({ msg: 'error', error: 'id is invalid' })
-    
+        return res.status(400).json({ msg: 'error', error: 'id is invalid' })
+
     const [result, error] = await queryHandler(sql`SELECT * FROM posts WHERE id = ${id}`)
     if (error)
         return res.status(500).json({ msg: 'error', error })
@@ -25,6 +27,8 @@ router.get('/:id', async (req, res) => {
 
     res.status(200).json({ msg: 'success', result: result[0] })
 })
+
+// TODO: add jwt auth for add, update and delete
 
 router.post('/add', async (req, res) => {
     const data = req.body;

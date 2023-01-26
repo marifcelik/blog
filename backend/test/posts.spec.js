@@ -12,6 +12,11 @@ let expectedPost = {
     body: expect.any(String),
 }
 
+describe('query handler', () => {
+    it.todo('should give data when promise resolved');
+    it.todo('should give error when promise rejected');
+})
+
 describe('POST', () => {
     it.todo('should cant add without auth');
 
