@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const postRouter = require('./routers/post.router');
-require('dotenv').config({ debug: true });
 
 const app = express();
 
